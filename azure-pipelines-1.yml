@@ -1,4 +1,12 @@
 # Maven package Java project Web App to Linux on Azure
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure Pass - Sponsorship(ede8ee5e-9518-4de9-b106-dcdb1456f4b9)'
+    appType: 'webAppLinux'
+    WebAppName: 'appservicejavatest'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    RuntimeStack: 'JAVA|11-java11'
 # Build your Java project and deploy it to Azure as a Linux web app
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
